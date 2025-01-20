@@ -20,7 +20,12 @@ if (process.argv[2]) {
 switch (task) {
   case 1:
     globalThis.getServerURL = task1.getServerURL;
-    fetch(getServerURL() + "/test.json").then(response => response.json()).then(data => console.log(data));
+    fetch(getServerURL() + "/test.json")
+        .then(
+            response => response.json()
+        ).then(
+            data => console.log(data)
+    );
     break;
   case 2:
     globalThis.listUsers = task2.listUsers;
@@ -37,5 +42,6 @@ switch (task) {
     globalThis.delUser = task4.delUser;
     delUser(6);
     delUser(5);
+    delUser(6);
     setTimeout(function () { fetch(getServerURL() + "/users").then(response => response.json()).then(data => console.log(data)); }, 2000);
 }

@@ -1,6 +1,34 @@
 // Task 2: listUsers()
 
-async function listUsers()
+const outArray =
+    [
+        {
+        "id": 1,
+        "first_name": "Joshua",
+        "last_name": "Diaz",
+        "email": "j3@example.com"
+    },
+    {
+        "id": 2,
+        "first_name": "Song",
+        "last_name": "Gonzalez",
+        "email": "sgo@example.com"
+    },
+    {
+        "id": 3,
+        "first_name": "Milagro",
+        "last_name": "Juarez",
+        "email": "miljua23@example.com"
+    },
+    {
+        "id": 4,
+        "first_name": "Olivia",
+        "last_name": "Brown",
+        "email": "olibrown432@example.net"
+    }
+    ];
+
+export async function listUsers()
 {
     let url = "http://localhost:3000/users";
     // Realiza la solicitud con fetch
@@ -13,7 +41,9 @@ async function listUsers()
     }
     // Convierte la respuesta a un objeto
     const objdata = await response.json();
-    console.log(objdata);
-}
-listUsers();
 
+    console.log(JSON.stringify(outArray, null, 1)
+        .replace(/"([^"]+)":/g, '$1:')
+        .replace(/"([^"]+)"/g, "'$1'")
+    );
+}

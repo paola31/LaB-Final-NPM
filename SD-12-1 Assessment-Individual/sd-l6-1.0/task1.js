@@ -1,9 +1,6 @@
 // Task 1: getServerURL()
 
-function getServerURL()
+export function getServerURL()
 {
-    return "http://localhost:3000/users"
+    return "http://localhost:3000"
 }
-console.log(getServerURL())
-
-module.exports = (getServerURL())
